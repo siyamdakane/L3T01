@@ -174,15 +174,16 @@ dt - display statistics
         user_file = open("user.txt", "r+" , encoding="utf-8") 
         task_file = open("tasks.txt", "r+" , encoding="utf-8" )
         users_file = user_file.read()
-            
-        if user_input == "admin":  
-            tasks = task_file.split()
-            tasks_calc = tasks_per_user.append(tasks[0])
-            amount_of_tasks = len(tasks_calc)
-            users = users_file.split(", ")
-            amount_of_users = len(users)  - 1
-            print("Total number of tasks:",amount_of_tasks)
-            print("Total number of users:", amount_of_users)
+        users = users_file.split(", ")
+        amount_of_users = len(users)  - 1
+
+        for line in task_file:
+            if user_input == "admin":  
+                tasks = task_file.split()
+                tasks_calc = tasks_per_user.append(tasks[0])
+                amount_of_tasks = len(tasks_calc)
+                print("Total number of tasks:",amount_of_tasks)
+                print("Total number of users:", amount_of_users)
 
         else:
            print("You cannot display statistics")
