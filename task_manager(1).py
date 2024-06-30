@@ -106,7 +106,8 @@ dt - display statistics
         task_title = input("Title of the task:")
         task_description = input("The description of the task:")
         due_date = input("What is the due date of the task?:")
-        current_date = input("Enter the date:")
+        from datetime import date 
+        current_date = date.today()
 
         task_file.write(username + " " + ", " + " " + task_title + " " + ", " + " " +
                         task_description + " " + ", " + " " + due_date + " " + ", " + " " + current_date + "\n")
